@@ -11,6 +11,13 @@
     --light-bg: #eee;
     --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
     --border:.1rem solid rgba(0,0,0,.3);
+    
+    --container-width-lg: 80%;
+    --container-width-md: 90%;
+    --container-width-sm: 94%;
+
+    --transition: all 400ms ease;
+
 }
 
 
@@ -28,6 +35,11 @@
 
     font-family: 'Poppins', sans-serif;
 }
+
+.container{
+    width: var(--container-width-lg);
+    margin:0 auto;
+ }
 
 
 @mixin grid($val){
@@ -91,10 +103,10 @@ html{
     }
 }
 
-
+/*
 section{
     padding:5rem 10%;
-}
+}*/
 
 
 .heading{
@@ -105,6 +117,10 @@ section{
     margin-bottom: 3rem;
     padding-left: 1rem;
     border-left: 1rem solid var(--yellow);
+}
+
+.collo{
+    border-right: 1rem solid var(--yellow);
 }
 
 
@@ -118,6 +134,7 @@ section{
     font-size: 1.7rem;
     text-transform: capitalize;
     transition:.2s linear;
+    border: 1px solid var(--yellow);
     
 
 
@@ -174,7 +191,7 @@ section{
     .navbar a:hover{
         color:var(--yellow);
     }
-    .icons div{
+    .icons div {
         /*@include iconsBox();*/
 
         height: 5rem;
@@ -451,15 +468,17 @@ section{
             h3{
                 text-transform: uppercase;
                 font-size: 6rem;
-                color: var(--black);
+                color: white;
+                text-shadow: 0 0 10px rgba(7, 7, 7, 0.8);
                 text-transform: capitalize;
 
             }
             p{
-                font-size: 2.5rem;
+                font-size: 3rem;
                 padding: 1rem 0;
                 line-height: 2;
-                color: var(--light-color);
+                color: var(--black);
+                text-shadow: 0 0 10px rgba(5, 0, 0, 0.8);
                 line-height: 1.5;
 
             }
@@ -543,6 +562,9 @@ section{
             text-align: center;
             background: var(--light-bg);
             padding: 3rem 2rem;
+            height: 43vh;
+            border-radius: 0 40px 0 40px;
+            overflow:hidden;
 
             h3{
                 font-size: 4rem;
@@ -621,9 +643,13 @@ section{
         display:grid;
         grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
         gap: 2rem;
+        
        
         .box{
             cursor: initial;
+        
+
+            
             
 
             &:hover .image img{
@@ -683,6 +709,7 @@ section{
 .reviews{
 
     .slide{
+        
         p{
             padding:1.5rem;
             background: var(--light-bg);
@@ -691,6 +718,8 @@ section{
             font-size: 1.5rem;
             color: var(--light-color);
             line-height: 1.5;
+            height:20rem;
+            overflow: hidden;
             
 
             &::before{
@@ -850,6 +879,66 @@ section{
 
 
 
+
+/*courses*/
+
+.courses{
+    /*this margin top adjusts the sizes between the sections*/
+    margin-top: 0rem;
+    background-color: var(--color-bg2);
+}
+.courses__container{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.courses h2{
+    color:#032B56;
+    padding-top: 2rem;
+}
+
+.courses h1{
+  color:#032B56;
+  padding-top: 2rem;
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+  font-weight: bolder;
+}
+
+/*.tablet-course{
+    visibility: hidden;
+}*/
+
+.course{
+    background: #276b80;
+    text-align: center;
+    border:1px solid transparent;
+    transition: var(--transition);
+    border-radius: 0 0 31px 31px; 
+    /* top-right, bottom-right, top-left, bottom-left */
+}
+.course:hover{
+    /*background: transparent;*/
+    border-color: var(--color-primary);
+    transform: scale(1.04);
+}
+
+.course__info{
+    padding: 2rem;
+}
+
+.course__info p{
+    margin: 1.2rem 0 2rem;
+    font-size: 0.9rem;
+    color: #E6EAEF;
+}
+
+
+
+
+
 .footer{
     text-align: center;
 
@@ -897,12 +986,31 @@ section{
 /*media queries*/
 
 @media (max-width:1200px) {
+    .container{
+        width: var(--container-width-md);
+    }
+    h1{
+        font-size: 2.2rem;
+    }
+    h2{
+        font-size: 1.7rem;
+    }
+    h3{
+        font-size: 1.4rem;
+    }
+    h4{
+        font-size: 1.2rem;
+    }
+
     .header{
         padding: 1.5rem 2rem;
     }
     section{
         padding:3rem 5%;
     }
+    
+
+  
 }
 
 
@@ -911,6 +1019,15 @@ section{
         font-size: 55%;
 
     }
+
+    /*courses*/
+
+.course{
+    margin-top: 0;
+}
+.courses__container{
+    grid-template-columns: 1fr 1fr;
+}
 
     section{
         padding:3rem 2rem;
@@ -949,6 +1066,10 @@ section{
 
 
 @media (max-width:768px) {
+    .container{
+        width: var(--container-width-sm);
+    }
+
     .header{
         .search-form{
             width:90%;
