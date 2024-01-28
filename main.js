@@ -1,21 +1,21 @@
 let navbar = document.querySelector('.header .navbar');
 let searchForm = document.querySelector('.header .search-form');
 let loginForm = document.querySelector('.header .login-form');
-let  contactInfo = document.querySelector('.contact-info');
+let contactInfo = document.querySelector('.contact-info');
 
 
 document.querySelector('#menu-btn').onclick = () =>{
     navbar.classList.toggle('active');
-    
+    contactInfo.classList.remove('active');
     searchForm.classList.remove('active');
     loginForm.classList.remove('active');
 };
 
 
-document.querySelector('#search-btn').onclick = () =>{
+/*document.querySelector('#search-btn').onclick = () =>{
     searchForm.classList.toggle('active');
     navbar.classList.remove('active');
-    
+    contactInfo.classList.remove('active');
     loginForm.classList.remove('active');
 };
 
@@ -25,14 +25,15 @@ document.querySelector('#login-btn').onclick = () =>{
     loginForm.classList.toggle('active');
     navbar.classList.remove('active');
     searchForm.classList.remove('active');
+    contactInfo.classList.remove('active');
     
 };
-
+*/
 document.querySelector('#info-btn').onclick = () =>{
     contactInfo.classList.add('active');
-    navbar.classList.remove('active');
+    /*navbar.classList.remove('active');
     searchForm.classList.remove('active');
-    loginForm.classList.remove('active');
+    loginForm.classList.remove('active');*/
 }
 
 
@@ -82,3 +83,25 @@ var swiper = new Swiper(".reviews-slider", {
       },
    
   });
+
+
+
+
+  
+//openig the faqs 
+
+const faqs= document.querySelectorAll('.faq');
+
+faqs.forEach(faq => {
+    faq.addEventListener('click', ()=>{
+        faq.classList.toggle('open');
+        //change the plus icon
+        const icon = faq.querySelector('.faq__icon i');
+        if(icon.className=== 'uil uil-plus'){
+            icon.className = "uil uil-minus"
+        }else{
+            icon.className = "uil uil-plus";
+        }
+    })
+})
+
