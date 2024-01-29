@@ -948,7 +948,8 @@ section{
 
     .credit{
         margin-top: 2rem;
-        color: var(--black);
+        color: var(--white);
+        background: #111;
         text-transform: capitalize;
         font-size: 2rem;
         padding-top: 1rem;
