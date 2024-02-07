@@ -468,7 +468,7 @@ section{
         }
          
         .content{
-            width: 50rem;
+            width: 100%;
             position:relative;
 
             h3{
@@ -477,6 +477,8 @@ section{
                 color: white;
                 text-shadow: 0 0 10px rgba(7, 7, 7, 0.8);
                 text-transform: capitalize;
+                 text-align: center;
+                justify-content: center;
 
             }
             p{
