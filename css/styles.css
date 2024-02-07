@@ -409,6 +409,12 @@ section{
             line-height: 1.5;
 
         }
+          p a{
+            color:var(--light-color);
+        }
+        p a:hover{
+            color:var(--yellow);
+        }
     }
    
     .share{
